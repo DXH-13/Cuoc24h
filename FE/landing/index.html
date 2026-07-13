@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cuoc24h - Đặt xe dịch vụ không cần app</title>
+    <meta
+      name="description"
+      content="Cuoc24h kết nối khách hàng với tài xế taxi dịch vụ độc lập, hỗ trợ đặt xe nhanh, đi sân bay, đi tỉnh, thuê xe theo giờ."
+    />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Cuoc24h">
+        <span class="brand-badge">C24</span>
+        <span class="brand-text">
+          <strong>Cuoc24h</strong>
+          <small>Taxi dịch vụ</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="Điều hướng chính">
+        <a href="#services">Dịch vụ</a>
+        <a href="#drivers">Tài xế</a>
+        <a href="#reviews">Đánh giá</a>
+        <a href="#driver-register">Đăng ký tài xế</a>
+      </nav>
+
+      <a class="nav-phone" href="tel:0900000000">
+        <span>Hotline</span>
+        <strong>0900 000 000</strong>
+      </a>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-backdrop" aria-hidden="true"></div>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="kicker">Đặt xe nhanh qua đội tài xế địa phương</p>
+            <h1>Cuoc24h</h1>
+            <p class="hero-lead">
+              Đặt taxi dịch vụ, xe sân bay, xe đi tỉnh hoặc thuê xe theo giờ mà không cần cài
+              thêm ứng dụng.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#booking">Đặt chuyến ngay</a>
+              <a class="button button-ghost" href="#drivers">Xem tài xế nổi bật</a>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="Xe taxi dịch vụ">
+            <img
+              src="https://images.unsplash.com/photo-1494515843206-f3117d3f51b7?auto=format&fit=crop&w=1200&q=85"
+              alt="Xe taxi màu vàng trên đường thành phố"
+            />
+            <div class="floating-card floating-card-top">
+              <span>24/7</span>
+              <strong>Báo chuyến nhanh</strong>
+            </div>
+            <div class="floating-card floating-card-bottom">
+              <span>Zalo</span>
+              <strong>Gửi nhóm điều phối</strong>
+            </div>
+          </div>
+        </div>
+
+        <form class="booking-panel" id="booking" aria-label="Form đặt chuyến nhanh">
+          <div class="booking-panel-heading">
+            <span>Đặt chuyến</span>
+            <strong>Nhập thông tin, điều phối sẽ liên hệ lại</strong>
+          </div>
+          <label>
+            Điểm đón
+            <input type="text" name="pickup" placeholder="Ví dụ: Quận 1, TP.HCM" />
+          </label>
+          <label>
+            Điểm đến
+            <input type="text" name="dropoff" placeholder="Ví dụ: Sân bay Tân Sơn Nhất" />
+          </label>
+          <label>
+            Số điện thoại
+            <input type="tel" name="phone" placeholder="0900 000 000" />
+          </label>
+          <label>
+            Loại xe
+            <select name="vehicleType">
+              <option>4 chỗ</option>
+              <option>7 chỗ</option>
+              <option>Xe hợp đồng</option>
+            </select>
+          </label>
+          <button class="button button-primary" type="button">Gửi yêu cầu</button>
+        </form>
+      </section>
+
+      <section class="section trust-strip" aria-label="Điểm nổi bật">
+        <div>
+          <strong>Không cần tài khoản</strong>
+          <span>Khách đặt xe trực tiếp trên web</span>
+        </div>
+        <div>
+          <strong>Điều phối thủ công</strong>
+          <span>Phù hợp MVP và nhóm tài xế tự do</span>
+        </div>
+        <div>
+          <strong>Tài xế được duyệt</strong>
+          <span>Admin kiểm tra trước khi hiển thị</span>
+        </div>
+      </section>
+
+      <section class="section service-section" id="services" aria-labelledby="services-title">
+        <div class="section-title">
+          <span>Dịch vụ quảng cáo</span>
+          <h2 id="services-title">Các nhu cầu đặt xe phổ biến</h2>
+          <p>
+            Khu vực này dành cho dịch vụ được ưu tiên hiển thị: sân bay, đi tỉnh, thuê xe theo
+            giờ, xe gia đình hoặc chuyến hợp đồng.
+          </p>
+        </div>
+
+        <div class="service-carousel" data-carousel>
+          <div class="service-track" data-track>
+            <article class="service-slide">
+              <img
+                src="https://images.unsplash.com/photo-1511918984145-48de785d4c4e?auto=format&fit=crop&w=900&q=85"
+                alt="Dòng xe taxi di chuyển trong thành phố"
+              />
+              <div>
+                <small>Sân bay</small>
+                <h3>Đưa đón sân bay đúng giờ</h3>
+                <p>Chuyến sớm, chuyến khuya, khách có hành lý hoặc gia đình đi cùng.</p>
+              </div>
+            </article>
+            <article class="service-slide">
+              <img
+                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85"
+                alt="Đường đi tỉnh rộng và thoáng"
+              />
+              <div>
+                <small>Đi tỉnh</small>
+                <h3>Xe đường dài, giá thỏa thuận</h3>
+                <p>Nhận lịch trình liên tỉnh, về quê, du lịch, công tác trong ngày.</p>
+              </div>
+            </article>
+            <article class="service-slide">
+              <img
+                src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=85"
+                alt="Xe sedan dịch vụ"
+              />
+              <div>
+                <small>Theo giờ</small>
+                <h3>Thuê xe linh hoạt nhiều điểm</h3>
+                <p>Phù hợp đi gặp khách, khám bệnh, dự tiệc hoặc cần xe chờ.</p>
+              </div>
+            </article>
+            <article class="service-slide">
+              <img
+                src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=85"
+                alt="Xe dịch vụ cao cấp trên đường"
+              />
+              <div>
+                <small>Hợp đồng</small>
+                <h3>Xe riêng cho khách công ty</h3>
+                <p>Lịch trình rõ ràng, tài xế xác nhận trước, phù hợp khách doanh nghiệp.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="carousel-footer">
+            <button class="icon-button" type="button" data-prev aria-label="Dịch vụ trước">‹</button>
+            <div class="carousel-dots" data-dots aria-label="Vị trí dịch vụ"></div>
+            <button class="icon-button" type="button" data-next aria-label="Dịch vụ sau">›</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section drivers-section" id="drivers" aria-labelledby="drivers-title">
+        <div class="section-title">
+          <span>Tài xế nổi bật</span>
+          <h2 id="drivers-title">Được đánh giá tốt hoặc đăng ký quảng cáo</h2>
+          <p>
+            Đây là vùng hiển thị mẫu cho các tài xế được admin duyệt, có đánh giá tốt hoặc mua
+            vị trí quảng cáo.
+          </p>
+        </div>
+
+        <div class="driver-grid">
+          <article class="driver-card is-sponsored">
+            <div class="driver-photo">
+              <img
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=700&q=85"
+                alt="Tài xế Nguyễn Minh"
+              />
+              <span>Quảng cáo</span>
+            </div>
+            <div class="driver-content">
+              <h3>Nguyễn Minh</h3>
+              <p class="driver-rating">4.9/5 · 214 chuyến</p>
+              <p>Xe 7 chỗ, chuyên sân bay và đi tỉnh miền Tây.</p>
+              <div class="driver-meta">
+                <span>TP.HCM</span>
+                <span>7 chỗ</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="driver-card">
+            <div class="driver-photo">
+              <img
+                src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=crop&w=700&q=85"
+                alt="Tài xế Anh Khoa"
+              />
+              <span>Top rated</span>
+            </div>
+            <div class="driver-content">
+              <h3>Anh Khoa</h3>
+              <p class="driver-rating">4.8/5 · 168 chuyến</p>
+              <p>Xe 4 chỗ sạch, phù hợp khách công tác và gia đình.</p>
+              <div class="driver-meta">
+                <span>Bình Dương</span>
+                <span>4 chỗ</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="driver-card">
+            <div class="driver-photo">
+              <img
+                src="https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?auto=format&fit=crop&w=700&q=85"
+                alt="Tài xế Chị Hạnh"
+              />
+              <span>Gia đình</span>
+            </div>
+            <div class="driver-content">
+              <h3>Chị Hạnh</h3>
+              <p class="driver-rating">4.9/5 · 96 chuyến</p>
+              <p>Ưu tiên khách nữ, gia đình có trẻ nhỏ, lịch trình nội thành.</p>
+              <div class="driver-meta">
+                <span>Đồng Nai</span>
+                <span>4 chỗ</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section why-section" aria-labelledby="why-title">
+        <div class="why-image">
+          <img
+            src="https://images.unsplash.com/photo-1520031441872-265e4ff70366?auto=format&fit=crop&w=1000&q=85"
+            alt="Khách hàng đang ngồi trong xe dịch vụ"
+          />
+        </div>
+        <div class="why-copy">
+          <span>Vì sao dùng Cuoc24h</span>
+          <h2 id="why-title">Nhanh như app, nhưng linh hoạt cho tài xế tự do</h2>
+          <div class="benefit-list">
+            <article>
+              <strong>01</strong>
+              <h3>Đặt xe không cần đăng ký</h3>
+              <p>Khách chỉ để lại thông tin chuyến và số điện thoại để điều phối liên hệ.</p>
+            </article>
+            <article>
+              <strong>02</strong>
+              <h3>Báo nhóm Zalo</h3>
+              <p>Chuyến mới được gửi vào nhóm để admin hoặc tài xế xử lý nhanh.</p>
+            </article>
+            <article>
+              <strong>03</strong>
+              <h3>Ưu tiên tài xế uy tín</h3>
+              <p>Tài xế có đánh giá tốt hoặc đăng ký quảng cáo có thể được hiển thị nổi bật.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reviews-section" id="reviews" aria-labelledby="reviews-title">
+        <div class="section-title centered">
+          <span>Feedback</span>
+          <h2 id="reviews-title">Khách hàng nói gì sau chuyến đi</h2>
+        </div>
+
+        <div class="review-grid">
+          <figure>
+            <blockquote>
+              “Đặt chuyến sân bay lúc khuya, có tài xế gọi lại nhanh và báo giá rõ ràng.”
+            </blockquote>
+            <figcaption>Lan Anh · Quận 7</figcaption>
+          </figure>
+          <figure>
+            <blockquote>
+              “Gia đình tôi đi Vũng Tàu cuối tuần, xe sạch và tài xế chạy rất cẩn thận.”
+            </blockquote>
+            <figcaption>Minh Quân · Thủ Đức</figcaption>
+          </figure>
+          <figure>
+            <blockquote>
+              “Không cần cài app, chỉ gửi số điện thoại rồi đội điều phối xác nhận.”
+            </blockquote>
+            <figcaption>Hoàng Nam · Bình Thạnh</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section coverage-section" aria-labelledby="coverage-title">
+        <div>
+          <span>Khu vực phục vụ</span>
+          <h2 id="coverage-title">Ưu tiên TP.HCM và tỉnh lân cận</h2>
+          <p>Danh sách có thể mở rộng theo nơi tài xế đăng ký hoạt động.</p>
+        </div>
+        <div class="coverage-tags" aria-label="Danh sách khu vực">
+          <span>TP.HCM</span>
+          <span>Bình Dương</span>
+          <span>Đồng Nai</span>
+          <span>Long An</span>
+          <span>Vũng Tàu</span>
+          <span>Miền Tây</span>
+        </div>
+      </section>
+
+      <section class="driver-cta" id="driver-register" aria-labelledby="driver-register-title">
+        <div>
+          <span>Dành cho tài xế</span>
+          <h2 id="driver-register-title">Muốn đăng ký quảng cáo hoặc nhận cuốc?</h2>
+          <p>
+            Gửi hồ sơ tài xế, khu vực hoạt động và loại xe. Admin sẽ duyệt trước khi hiển thị.
+          </p>
+        </div>
+        <a class="button button-dark" href="#">Đăng ký tài xế</a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <strong>Cuoc24h</strong>
+        <p>Kết nối khách hàng với tài xế dịch vụ độc lập.</p>
+      </div>
+      <a href="#top">Lên đầu trang</a>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

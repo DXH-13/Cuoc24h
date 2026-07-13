@@ -52,3 +52,7 @@ FE/
 - Public pages gom landing page, booking flow, driver registration.
 - Admin pages gom login, dashboard, bookings, drivers, notification logs.
 
+## Prototype
+
+- Landing page static: `landing/index.html`
+- Mo truc tiep file HTML trong trinh duyet de xem prototype khi chua scaffold Angular.
