@@ -3,206 +3,373 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cuoc24h - Đặt xe dịch vụ không cần app</title>
+    <title>Cuốc24h - Đặt xe dịch vụ không cần app</title>
     <meta
       name="description"
-      content="Cuoc24h kết nối khách hàng với tài xế taxi dịch vụ độc lập, hỗ trợ đặt xe nhanh, đi sân bay, đi tỉnh, thuê xe theo giờ."
+      content="Cuốc24h kết nối khách hàng với tài xế taxi dịch vụ độc lập, hỗ trợ đặt xe nhanh, đi sân bay, đi tỉnh, thuê xe theo giờ."
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="icon" type="image/png" href="logo.png" />
+    <link rel="apple-touch-icon" href="logo.png" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="topbar">
-      <a class="brand" href="#top" aria-label="Cuoc24h">
-        <span class="brand-badge">C24</span>
+      <a class="brand" href="#top" aria-label="Cuốc24h">
+        <img class="brand-logo" src="logo.png" alt="Logo Cuốc24h" width="48" height="48" />
         <span class="brand-text">
-          <strong>Cuoc24h</strong>
+          <strong>Cuốc24h</strong>
           <small>Taxi dịch vụ</small>
         </span>
       </a>
 
       <nav class="main-nav" aria-label="Điều hướng chính">
         <a href="#services">Dịch vụ</a>
-        <a href="#drivers">Tài xế</a>
+        <a href="#drivers">Tài xế nổi bật</a>
         <a href="#reviews">Đánh giá</a>
-        <a href="#driver-register">Đăng ký tài xế</a>
+        <a href="#driver-register">Đăng ký đối tác</a>
       </nav>
 
       <a class="nav-phone" href="tel:0900000000">
-        <span>Hotline</span>
+        <span>Hotline 24/7</span>
         <strong>0900 000 000</strong>
       </a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        data-nav-toggle
+        aria-label="Mở menu điều hướng"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
     </header>
+
+    <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
+      <nav class="mobile-menu-nav" aria-label="Điều hướng di động">
+        <a href="#services" data-nav-link>Dịch vụ</a>
+        <a href="#drivers" data-nav-link>Tài xế nổi bật</a>
+        <a href="#reviews" data-nav-link>Đánh giá</a>
+        <a href="#driver-register" data-nav-link>Đăng ký đối tác</a>
+      </nav>
+      <a class="button button-primary" href="#booking" data-nav-link>Đặt chuyến ngay</a>
+      <a class="mobile-menu-phone" href="tel:0900000000">
+        <span class="mobile-menu-phone-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        </span>
+        <span class="mobile-menu-phone-text">
+          <small>Hotline 24/7</small>
+          <strong>0900 000 000</strong>
+        </span>
+      </a>
+    </div>
+    <div class="mobile-menu-overlay" data-nav-overlay></div>
 
     <main id="top">
       <section class="hero">
         <div class="hero-backdrop" aria-hidden="true"></div>
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <p class="kicker">Đặt xe nhanh qua đội tài xế địa phương</p>
-            <h1>Cuoc24h</h1>
-            <p class="hero-lead">
-              Đặt taxi dịch vụ, xe sân bay, xe đi tỉnh hoặc thuê xe theo giờ mà không cần cài
-              thêm ứng dụng.
-            </p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="#booking">Đặt chuyến ngay</a>
-              <a class="button button-ghost" href="#drivers">Xem tài xế nổi bật</a>
-            </div>
+        <div class="hero-carousel" data-hero-carousel>
+          <div class="hero-track" data-hero-track>
+            <article class="hero-slide">
+              <img
+                class="hero-slide-bg"
+                src="https://images.unsplash.com/photo-1494515843206-f3117d3f51b7?auto=format&fit=crop&w=1920&q=80"
+                alt="Xe taxi di chuyển trên đường thành phố"
+              />
+              <div class="hero-slide-inner">
+                <div class="hero-copy">
+                  <span class="kicker">Đội ngũ tài xế địa phương uy tín</span>
+                  <h1>Di chuyển dễ dàng với Cuốc24h</h1>
+                  <p class="hero-lead">
+                    Đặt taxi dịch vụ, xe sân bay, xe đi tỉnh hoặc thuê xe theo giờ nhanh chóng mà không cần tải ứng dụng phức tạp.
+                  </p>
+                  <div class="hero-actions">
+                    <a class="button button-primary" href="#booking">
+                      <span>Đặt chuyến ngay</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                    <a class="button button-ghost" href="#drivers">Xem tài xế</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="hero-slide">
+              <img
+                class="hero-slide-bg"
+                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1920&q=80"
+                alt="Đường cao tốc thoáng rộng cho chuyến đi tỉnh"
+              />
+              <div class="hero-slide-inner">
+                <div class="hero-copy">
+                  <span class="kicker">Xe đường dài liên tỉnh</span>
+                  <h1>Đi tỉnh trọn gói, không phát sinh</h1>
+                  <p class="hero-lead">
+                    Công tác, du lịch hay về quê — xe đời mới, tài xế thông thuộc đường, báo giá trọn gói rõ ràng ngay từ đầu.
+                  </p>
+                  <div class="hero-actions">
+                    <a class="button button-primary" href="#booking">
+                      <span>Đặt chuyến ngay</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                    <a class="button button-ghost" href="#services">Xem dịch vụ</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="hero-slide">
+              <img
+                class="hero-slide-bg"
+                src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80"
+                alt="Xe dịch vụ cao cấp trên đường"
+              />
+              <div class="hero-slide-inner">
+                <div class="hero-copy">
+                  <span class="kicker">Linh hoạt theo nhu cầu</span>
+                  <h1>Đón sân bay & thuê xe theo giờ</h1>
+                  <p class="hero-lead">
+                    Xe riêng phục vụ suốt hành trình — đón trả sân bay đúng giờ, đi gặp khách hàng hay dự tiệc đều chu đáo.
+                  </p>
+                  <div class="hero-actions">
+                    <a class="button button-primary" href="#booking">
+                      <span>Đặt chuyến ngay</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                    <a class="button button-ghost" href="#reviews">Xem đánh giá</a>
+                  </div>
+                </div>
+              </div>
+            </article>
           </div>
 
-          <div class="hero-visual" aria-label="Xe taxi dịch vụ">
-            <img
-              src="https://images.unsplash.com/photo-1494515843206-f3117d3f51b7?auto=format&fit=crop&w=1200&q=85"
-              alt="Xe taxi màu vàng trên đường thành phố"
-            />
-            <div class="floating-card floating-card-top">
-              <span>24/7</span>
-              <strong>Báo chuyến nhanh</strong>
-            </div>
-            <div class="floating-card floating-card-bottom">
-              <span>Zalo</span>
-              <strong>Gửi nhóm điều phối</strong>
-            </div>
-          </div>
+          <button class="hero-arrow hero-arrow-prev" type="button" data-hero-prev aria-label="Slide trước">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <button class="hero-arrow hero-arrow-next" type="button" data-hero-next aria-label="Slide sau">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+          <div class="hero-dots" data-hero-dots aria-label="Vị trí slide hero"></div>
         </div>
 
         <form class="booking-panel" id="booking" aria-label="Form đặt chuyến nhanh">
           <div class="booking-panel-heading">
-            <span>Đặt chuyến</span>
-            <strong>Nhập thông tin, điều phối sẽ liên hệ lại</strong>
+            <span>Đặt xe nhanh</span>
+            <strong>Thông tin hành trình của bạn</strong>
           </div>
-          <label>
-            Điểm đón
-            <input type="text" name="pickup" placeholder="Ví dụ: Quận 1, TP.HCM" />
-          </label>
-          <label>
-            Điểm đến
-            <input type="text" name="dropoff" placeholder="Ví dụ: Sân bay Tân Sơn Nhất" />
-          </label>
-          <label>
-            Số điện thoại
-            <input type="tel" name="phone" placeholder="0900 000 000" />
-          </label>
-          <label>
-            Loại xe
-            <select name="vehicleType">
-              <option>4 chỗ</option>
-              <option>7 chỗ</option>
-              <option>Xe hợp đồng</option>
-            </select>
-          </label>
-          <button class="button button-primary" type="button">Gửi yêu cầu</button>
+          <div class="booking-form-grid">
+            <div class="booking-field">
+              <label>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span>Điểm đón</span>
+              </label>
+              <div class="input-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="1"></circle></svg>
+                <input type="text" name="pickup" placeholder="Ví dụ: Quận 1, TP.HCM" required />
+              </div>
+            </div>
+
+            <div class="booking-field">
+              <label>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span>Điểm đến</span>
+              </label>
+              <div class="input-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"></path></svg>
+                <input type="text" name="dropoff" placeholder="Ví dụ: Sân bay Tân Sơn Nhất" required />
+              </div>
+            </div>
+
+            <div class="booking-field">
+              <label>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <span>Số điện thoại</span>
+              </label>
+              <div class="input-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <input type="tel" name="phone" placeholder="0900 000 000" required />
+              </div>
+            </div>
+
+            <div class="booking-field">
+              <label>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2" ry="2"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                <span>Loại xe</span>
+              </label>
+              <div class="input-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2" ry="2"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                <select name="vehicleType">
+                  <option>4 chỗ (Tiết kiệm)</option>
+                  <option>7 chỗ (Rộng rãi)</option>
+                  <option>Xe hợp đồng / Du lịch</option>
+                </select>
+              </div>
+            </div>
+
+            <button class="button button-primary" type="button">Gửi yêu cầu</button>
+          </div>
         </form>
       </section>
 
-      <section class="section trust-strip" aria-label="Điểm nổi bật">
-        <div>
-          <strong>Không cần tài khoản</strong>
-          <span>Khách đặt xe trực tiếp trên web</span>
-        </div>
-        <div>
-          <strong>Điều phối thủ công</strong>
-          <span>Phù hợp MVP và nhóm tài xế tự do</span>
-        </div>
-        <div>
-          <strong>Tài xế được duyệt</strong>
-          <span>Admin kiểm tra trước khi hiển thị</span>
+      <section class="trust-strip-container">
+        <div class="trust-strip" aria-label="Điểm nổi bật dịch vụ">
+          <div class="trust-card">
+            <div class="trust-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+            </div>
+            <div class="trust-content">
+              <strong>Không cần tài khoản</strong>
+              <span>Khách đặt xe nhanh, bỏ qua các bước đăng ký rườm rà.</span>
+            </div>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            </div>
+            <div class="trust-content">
+              <strong>Kết nối tức thì</strong>
+              <span>Yêu cầu của bạn được tài xế khu vực gần nhất tiếp nhận và xác nhận nhanh chóng.</span>
+            </div>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <div class="trust-content">
+              <strong>Tài xế tin cậy</strong>
+              <span>Tất cả tài xế được xác minh thông tin và có lý lịch rõ ràng.</span>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="section service-section" id="services" aria-labelledby="services-title">
+      <section class="section service-section-container" id="services">
         <div class="section-title">
-          <span>Dịch vụ quảng cáo</span>
-          <h2 id="services-title">Các nhu cầu đặt xe phổ biến</h2>
+          <span>Dịch vụ đa dạng</span>
+          <h2>Đáp ứng mọi nhu cầu di chuyển</h2>
           <p>
-            Khu vực này dành cho dịch vụ được ưu tiên hiển thị: sân bay, đi tỉnh, thuê xe theo
-            giờ, xe gia đình hoặc chuyến hợp đồng.
+            Hệ thống kết nối nhanh với các dòng xe đời mới, sạch sẽ cùng tài xế lái xe an toàn, lịch sự.
           </p>
         </div>
 
-        <div class="service-carousel" data-carousel>
-          <div class="service-track" data-track>
+        <div class="spotlight-carousel" data-carousel>
+          <button class="spot-arrow spot-arrow-prev" type="button" data-prev aria-label="Dịch vụ trước">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <div class="spot-viewport" data-viewport>
+          <div class="spot-track" data-track>
             <article class="service-slide">
-              <img
-                src="https://images.unsplash.com/photo-1511918984145-48de785d4c4e?auto=format&fit=crop&w=900&q=85"
-                alt="Dòng xe taxi di chuyển trong thành phố"
-              />
-              <div>
-                <small>Sân bay</small>
+              <div class="service-image-container">
+                <img
+                  src="https://images.unsplash.com/photo-1511918984145-48de785d4c4e?auto=format&fit=crop&w=900&q=85"
+                  alt="Dòng xe taxi di chuyển trong thành phố"
+                />
+                <span class="service-tag">Sân bay</span>
+              </div>
+              <div class="service-content">
                 <h3>Đưa đón sân bay đúng giờ</h3>
-                <p>Chuyến sớm, chuyến khuya, khách có hành lý hoặc gia đình đi cùng.</p>
+                <p>An tâm với các chuyến bay sớm hoặc khuya. Tài xế hỗ trợ hành lý chu đáo, đón trả tận sảnh nhà ga.</p>
               </div>
             </article>
+
             <article class="service-slide">
-              <img
-                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85"
-                alt="Đường đi tỉnh rộng và thoáng"
-              />
-              <div>
-                <small>Đi tỉnh</small>
-                <h3>Xe đường dài, giá thỏa thuận</h3>
-                <p>Nhận lịch trình liên tỉnh, về quê, du lịch, công tác trong ngày.</p>
+              <div class="service-image-container">
+                <img
+                  src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85"
+                  alt="Đường đi tỉnh rộng và thoáng"
+                />
+                <span class="service-tag">Đi tỉnh</span>
+              </div>
+              <div class="service-content">
+                <h3>Xe đường dài liên tỉnh</h3>
+                <p>Các chuyến công tác, du lịch, thăm quê liên tỉnh với mức giá hợp lý trọn gói, cam kết không phát sinh chi phí.</p>
               </div>
             </article>
+
             <article class="service-slide">
-              <img
-                src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=85"
-                alt="Xe sedan dịch vụ"
-              />
-              <div>
-                <small>Theo giờ</small>
-                <h3>Thuê xe linh hoạt nhiều điểm</h3>
-                <p>Phù hợp đi gặp khách, khám bệnh, dự tiệc hoặc cần xe chờ.</p>
+              <div class="service-image-container">
+                <img
+                  src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=85"
+                  alt="Xe sedan dịch vụ"
+                />
+                <span class="service-tag">Theo giờ</span>
+              </div>
+              <div class="service-content">
+                <h3>Thuê xe linh hoạt theo giờ</h3>
+                <p>Giải pháp tối ưu cho nhu cầu đi gặp khách hàng, khám bệnh hoặc dự tiệc cần xe phục vụ riêng suốt hành trình.</p>
               </div>
             </article>
+
             <article class="service-slide">
-              <img
-                src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=85"
-                alt="Xe dịch vụ cao cấp trên đường"
-              />
-              <div>
-                <small>Hợp đồng</small>
-                <h3>Xe riêng cho khách công ty</h3>
-                <p>Lịch trình rõ ràng, tài xế xác nhận trước, phù hợp khách doanh nghiệp.</p>
+              <div class="service-image-container">
+                <img
+                  src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=85"
+                  alt="Xe dịch vụ cao cấp trên đường"
+                />
+                <span class="service-tag">Hợp đồng</span>
+              </div>
+              <div class="service-content">
+                <h3>Xe hợp đồng doanh nghiệp</h3>
+                <p>Cung cấp giải pháp đưa đón nhân viên, đối tác với đầy đủ hợp đồng pháp lý và quy trình chuyên nghiệp.</p>
               </div>
             </article>
+          </div>
           </div>
 
-          <div class="carousel-footer">
-            <button class="icon-button" type="button" data-prev aria-label="Dịch vụ trước">‹</button>
-            <div class="carousel-dots" data-dots aria-label="Vị trí dịch vụ"></div>
-            <button class="icon-button" type="button" data-next aria-label="Dịch vụ sau">›</button>
-          </div>
+          <button class="spot-arrow spot-arrow-next" type="button" data-next aria-label="Dịch vụ sau">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+          <div class="carousel-dots" data-dots aria-label="Vị trí dịch vụ"></div>
         </div>
       </section>
 
-      <section class="section drivers-section" id="drivers" aria-labelledby="drivers-title">
-        <div class="section-title">
+      <section class="section drivers-container" id="drivers">
+        <div class="section-title centered">
           <span>Tài xế nổi bật</span>
-          <h2 id="drivers-title">Được đánh giá tốt hoặc đăng ký quảng cáo</h2>
+          <h2>Đối tác tin cậy được khách hàng bình chọn</h2>
           <p>
-            Đây là vùng hiển thị mẫu cho các tài xế được admin duyệt, có đánh giá tốt hoặc mua
-            vị trí quảng cáo.
+            Danh sách những tài xế tiêu biểu có chỉ số phục vụ xuất sắc, xe sạch đẹp và nhận được nhiều phản hồi tích cực.
           </p>
         </div>
 
-        <div class="driver-grid">
+        <div class="spotlight-carousel" data-carousel>
+          <button class="spot-arrow spot-arrow-prev" type="button" data-prev aria-label="Tài xế trước">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <div class="spot-viewport" data-viewport>
+          <div class="spot-track" data-track>
           <article class="driver-card is-sponsored">
             <div class="driver-photo">
               <img
                 src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=700&q=85"
                 alt="Tài xế Nguyễn Minh"
               />
-              <span>Quảng cáo</span>
+              <span class="driver-badge driver-badge-sponsored">Được đề xuất</span>
             </div>
             <div class="driver-content">
-              <h3>Nguyễn Minh</h3>
-              <p class="driver-rating">4.9/5 · 214 chuyến</p>
-              <p>Xe 7 chỗ, chuyên sân bay và đi tỉnh miền Tây.</p>
+              <div class="driver-header">
+                <h3>Nguyễn Minh</h3>
+                <div class="driver-rating">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  4.9 <span>(214 chuyến)</span>
+                </div>
+              </div>
+              <p class="driver-desc">Chuyên nghiệp, thông thuộc đường đi, phục vụ chu đáo các tuyến đi tỉnh miền Tây.</p>
               <div class="driver-meta">
-                <span>TP.HCM</span>
-                <span>7 chỗ</span>
+                <span class="driver-tag">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path></svg>
+                  TP.HCM / Miền Tây
+                </span>
+                <span class="driver-tag">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2" ry="2"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                  7 Chỗ rộng rãi
+                </span>
               </div>
             </div>
           </article>
@@ -213,15 +380,26 @@
                 src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=crop&w=700&q=85"
                 alt="Tài xế Anh Khoa"
               />
-              <span>Top rated</span>
+              <span class="driver-badge driver-badge-top">Top Lựa Chọn</span>
             </div>
             <div class="driver-content">
-              <h3>Anh Khoa</h3>
-              <p class="driver-rating">4.8/5 · 168 chuyến</p>
-              <p>Xe 4 chỗ sạch, phù hợp khách công tác và gia đình.</p>
+              <div class="driver-header">
+                <h3>Anh Khoa</h3>
+                <div class="driver-rating">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  4.8 <span>(168 chuyến)</span>
+                </div>
+              </div>
+              <p class="driver-desc">Xe gia đình sạch mát, không mùi. Lái xe điềm đạm, an toàn, phù hợp đi công tác.</p>
               <div class="driver-meta">
-                <span>Bình Dương</span>
-                <span>4 chỗ</span>
+                <span class="driver-tag">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path></svg>
+                  Bình Dương / TP.HCM
+                </span>
+                <span class="driver-tag">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2" ry="2"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                  4 Chỗ lịch sự
+                </span>
               </div>
             </div>
           </article>
@@ -232,114 +410,402 @@
                 src="https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?auto=format&fit=crop&w=700&q=85"
                 alt="Tài xế Chị Hạnh"
               />
-              <span>Gia đình</span>
+              <span class="driver-badge driver-badge-family">Thân Thiện</span>
             </div>
             <div class="driver-content">
-              <h3>Chị Hạnh</h3>
-              <p class="driver-rating">4.9/5 · 96 chuyến</p>
-              <p>Ưu tiên khách nữ, gia đình có trẻ nhỏ, lịch trình nội thành.</p>
+              <div class="driver-header">
+                <h3>Chị Hạnh</h3>
+                <div class="driver-rating">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  4.9 <span>(96 chuyến)</span>
+                </div>
+              </div>
+              <p class="driver-desc">Phục vụ chu đáo, thân thiện, ưu tiên đón khách nữ và gia đình có em nhỏ đi nội thành.</p>
               <div class="driver-meta">
-                <span>Đồng Nai</span>
-                <span>4 chỗ</span>
+                <span class="driver-tag">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path></svg>
+                  Đồng Nai / Sân Bay
+                </span>
+                <span class="driver-tag">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2" ry="2"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                  4 Chỗ tiện nghi
+                </span>
               </div>
             </div>
           </article>
+
+          <article class="driver-card">
+            <div class="driver-photo">
+              <img
+                src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=700&q=85"
+                alt="Tài xế Trần Bảo"
+              />
+              <span class="driver-badge driver-badge-top">Đánh giá cao</span>
+            </div>
+            <div class="driver-content">
+              <div class="driver-header">
+                <h3>Trần Bảo</h3>
+                <div class="driver-rating">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  4.8 <span>(152 chuyến)</span>
+                </div>
+              </div>
+              <p class="driver-desc">Lái xe êm ái, đúng giờ, thông thạo các tuyến nội đô và đường dài miền Đông.</p>
+              <div class="driver-meta">
+                <span class="driver-tag">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path></svg>
+                  TP.HCM / Miền Đông
+                </span>
+                <span class="driver-tag">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2" ry="2"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                  7 Chỗ rộng rãi
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <article class="driver-card">
+            <div class="driver-photo">
+              <img
+                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=700&q=85"
+                alt="Tài xế Đức Thịnh"
+              />
+              <span class="driver-badge driver-badge-family">Đúng giờ</span>
+            </div>
+            <div class="driver-content">
+              <div class="driver-header">
+                <h3>Đức Thịnh</h3>
+                <div class="driver-rating">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  4.7 <span>(128 chuyến)</span>
+                </div>
+              </div>
+              <p class="driver-desc">Xe đời mới sạch sẽ, hỗ trợ hành lý nhiệt tình, chuyên tuyến Vũng Tàu - sân bay.</p>
+              <div class="driver-meta">
+                <span class="driver-tag">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path></svg>
+                  Vũng Tàu / Sân Bay
+                </span>
+                <span class="driver-tag">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2" ry="2"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                  4 Chỗ tiện nghi
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <article class="driver-card">
+            <div class="driver-photo">
+              <img
+                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=700&q=85"
+                alt="Tài xế Chị Thu"
+              />
+              <span class="driver-badge driver-badge-top">Được yêu thích</span>
+            </div>
+            <div class="driver-content">
+              <div class="driver-header">
+                <h3>Chị Thu</h3>
+                <div class="driver-rating">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  5.0 <span>(74 chuyến)</span>
+                </div>
+              </div>
+              <p class="driver-desc">Nhẹ nhàng, cẩn thận, được nhiều khách nữ và người lớn tuổi tin tưởng lựa chọn.</p>
+              <div class="driver-meta">
+                <span class="driver-tag">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path></svg>
+                  Bình Dương / TP.HCM
+                </span>
+                <span class="driver-tag">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2" ry="2"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                  4 Chỗ lịch sự
+                </span>
+              </div>
+            </div>
+          </article>
+          </div>
+          </div>
+
+          <button class="spot-arrow spot-arrow-next" type="button" data-next aria-label="Tài xế sau">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+          <div class="carousel-dots" data-dots aria-label="Vị trí tài xế"></div>
         </div>
       </section>
 
-      <section class="section why-section" aria-labelledby="why-title">
-        <div class="why-image">
-          <img
-            src="https://images.unsplash.com/photo-1520031441872-265e4ff70366?auto=format&fit=crop&w=1000&q=85"
-            alt="Khách hàng đang ngồi trong xe dịch vụ"
-          />
-        </div>
-        <div class="why-copy">
-          <span>Vì sao dùng Cuoc24h</span>
-          <h2 id="why-title">Nhanh như app, nhưng linh hoạt cho tài xế tự do</h2>
-          <div class="benefit-list">
-            <article>
-              <strong>01</strong>
-              <h3>Đặt xe không cần đăng ký</h3>
-              <p>Khách chỉ để lại thông tin chuyến và số điện thoại để điều phối liên hệ.</p>
-            </article>
-            <article>
-              <strong>02</strong>
-              <h3>Báo nhóm Zalo</h3>
-              <p>Chuyến mới được gửi vào nhóm để admin hoặc tài xế xử lý nhanh.</p>
-            </article>
-            <article>
-              <strong>03</strong>
-              <h3>Ưu tiên tài xế uy tín</h3>
-              <p>Tài xế có đánh giá tốt hoặc đăng ký quảng cáo có thể được hiển thị nổi bật.</p>
-            </article>
+      <section class="section why-container">
+        <div class="why-grid">
+          <div class="why-image-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1520031441872-265e4ff70366?auto=format&fit=crop&w=1000&q=85"
+              alt="Khách hàng đang thoải mái ngồi trong xe dịch vụ"
+            />
+          </div>
+          <div class="why-copy">
+            <span>Trải nghiệm vượt trội</span>
+            <h2>Tại sao nên lựa chọn Cuốc24h?</h2>
+            <div class="benefit-list">
+              <div class="benefit-card">
+                <div class="benefit-number">01</div>
+                <div class="benefit-content">
+                  <h3>Nhanh chóng, tinh giản</h3>
+                  <p>Không cần đăng nhập, không tốn dung lượng tải app. Thao tác đặt xe trực tiếp trong 10 giây.</p>
+                </div>
+              </div>
+              <div class="benefit-card">
+                <div class="benefit-number">02</div>
+                <div class="benefit-content">
+                  <h3>Kết nối tài xế nhanh nhất</h3>
+                  <p>Yêu cầu của bạn được chuyển ngay tới tài xế phù hợp ở khu vực gần nhất, tối ưu thời gian đón khách.</p>
+                </div>
+              </div>
+              <div class="benefit-card">
+                <div class="benefit-number">03</div>
+                <div class="benefit-content">
+                  <h3>Giá cả thỏa thuận minh bạch</h3>
+                  <p>Nhận báo giá trực tiếp từ tài xế hoặc điều phối viên. Không có phí ẩn, không tăng giá giờ cao điểm vô lý.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="section reviews-section" id="reviews" aria-labelledby="reviews-title">
+      <section class="section reviews-container" id="reviews">
         <div class="section-title centered">
-          <span>Feedback</span>
-          <h2 id="reviews-title">Khách hàng nói gì sau chuyến đi</h2>
+          <span>Ý kiến khách hàng</span>
+          <h2>Phản hồi chân thực sau mỗi chuyến đi</h2>
         </div>
 
-        <div class="review-grid">
-          <figure>
-            <blockquote>
-              “Đặt chuyến sân bay lúc khuya, có tài xế gọi lại nhanh và báo giá rõ ràng.”
-            </blockquote>
-            <figcaption>Lan Anh · Quận 7</figcaption>
-          </figure>
-          <figure>
-            <blockquote>
-              “Gia đình tôi đi Vũng Tàu cuối tuần, xe sạch và tài xế chạy rất cẩn thận.”
-            </blockquote>
-            <figcaption>Minh Quân · Thủ Đức</figcaption>
-          </figure>
-          <figure>
-            <blockquote>
-              “Không cần cài app, chỉ gửi số điện thoại rồi đội điều phối xác nhận.”
-            </blockquote>
-            <figcaption>Hoàng Nam · Bình Thạnh</figcaption>
-          </figure>
+        <div class="spotlight-carousel" data-carousel>
+          <button class="spot-arrow spot-arrow-prev" type="button" data-prev aria-label="Đánh giá trước">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <div class="spot-viewport" data-viewport>
+          <div class="spot-track" data-track>
+          <div class="review-card">
+            <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.748-9.762 9-10.161v3.313c-3.148.86-4.661 2.516-4.99 5.302h4.99V21h-9zm-12 0v-7.391c0-5.704 3.748-9.762 9-10.161v3.313c-3.148.86-4.661 2.516-4.99 5.302h4.99V21h-9z"/></svg>
+            <div class="review-stars">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <p class="review-text">
+              “Đặt chuyến đi sân bay lúc rạng sáng, có tài xế gọi xác nhận siêu nhanh và báo giá cố định rõ ràng, tôi rất yên tâm.”
+            </p>
+            <div class="review-author">
+              <div class="author-avatar">LA</div>
+              <div class="author-info">
+                <span class="author-name">Lan Anh</span>
+                <span class="author-location">Quận 7, TP.HCM</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.748-9.762 9-10.161v3.313c-3.148.86-4.661 2.516-4.99 5.302h4.99V21h-9zm-12 0v-7.391c0-5.704 3.748-9.762 9-10.161v3.313c-3.148.86-4.661 2.516-4.99 5.302h4.99V21h-9z"/></svg>
+            <div class="review-stars">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <p class="review-text">
+              “Gia đình tôi đi Vũng Tàu chơi dịp cuối tuần, xe rất sạch sẽ thơm tho, tài xế lái đầm, lịch thiệp và hỗ trợ bưng bê đồ.”
+            </p>
+            <div class="review-author">
+              <div class="author-avatar">MQ</div>
+              <div class="author-info">
+                <span class="author-name">Minh Quân</span>
+                <span class="author-location">Thủ Đức, TP.HCM</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.748-9.762 9-10.161v3.313c-3.148.86-4.661 2.516-4.99 5.302h4.99V21h-9zm-12 0v-7.391c0-5.704 3.748-9.762 9-10.161v3.313c-3.148.86-4.661 2.516-4.99 5.302h4.99V21h-9z"/></svg>
+            <div class="review-stars">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <p class="review-text">
+              “Nhanh và tiện thực sự. Chỉ cần vào web điền lộ trình với số điện thoại là có lái xe khu vực liên hệ đón luôn.”
+            </p>
+            <div class="review-author">
+              <div class="author-avatar">HN</div>
+              <div class="author-info">
+                <span class="author-name">Hoàng Nam</span>
+                <span class="author-location">Bình Thạnh, TP.HCM</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.748-9.762 9-10.161v3.313c-3.148.86-4.661 2.516-4.99 5.302h4.99V21h-9zm-12 0v-7.391c0-5.704 3.748-9.762 9-10.161v3.313c-3.148.86-4.661 2.516-4.99 5.302h4.99V21h-9z"/></svg>
+            <div class="review-stars">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <p class="review-text">
+              “Tài xế đến sớm hơn giờ hẹn, xe thơm sạch. Giá báo trước đúng như lúc đi, không phát sinh gì thêm.”
+            </p>
+            <div class="review-author">
+              <div class="author-avatar">TT</div>
+              <div class="author-info">
+                <span class="author-name">Thu Trang</span>
+                <span class="author-location">Quận 3, TP.HCM</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.748-9.762 9-10.161v3.313c-3.148.86-4.661 2.516-4.99 5.302h4.99V21h-9zm-12 0v-7.391c0-5.704 3.748-9.762 9-10.161v3.313c-3.148.86-4.661 2.516-4.99 5.302h4.99V21h-9z"/></svg>
+            <div class="review-stars">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <p class="review-text">
+              “Đi từ Biên Hòa lên Đà Lạt, tài xế vững tay lái, nghỉ ngơi hợp lý, cả nhà đi rất thoải mái.”
+            </p>
+            <div class="review-author">
+              <div class="author-avatar">ĐH</div>
+              <div class="author-info">
+                <span class="author-name">Đức Huy</span>
+                <span class="author-location">Biên Hòa, Đồng Nai</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.748-9.762 9-10.161v3.313c-3.148.86-4.661 2.516-4.99 5.302h4.99V21h-9zm-12 0v-7.391c0-5.704 3.748-9.762 9-10.161v3.313c-3.148.86-4.661 2.516-4.99 5.302h4.99V21h-9z"/></svg>
+            <div class="review-stars">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <p class="review-text">
+              “Đặt xe lúc nửa đêm ra sân bay mà vẫn có tài xế nhận nhanh, phục vụ chu đáo, mình rất hài lòng.”
+            </p>
+            <div class="review-author">
+              <div class="author-avatar">NB</div>
+              <div class="author-info">
+                <span class="author-name">Ngọc Bích</span>
+                <span class="author-location">Tân Bình, TP.HCM</span>
+              </div>
+            </div>
+          </div>
+          </div>
+          </div>
+
+          <button class="spot-arrow spot-arrow-next" type="button" data-next aria-label="Đánh giá sau">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+          <div class="carousel-dots" data-dots aria-label="Vị trí đánh giá"></div>
         </div>
       </section>
 
-      <section class="section coverage-section" aria-labelledby="coverage-title">
-        <div>
-          <span>Khu vực phục vụ</span>
-          <h2 id="coverage-title">Ưu tiên TP.HCM và tỉnh lân cận</h2>
-          <p>Danh sách có thể mở rộng theo nơi tài xế đăng ký hoạt động.</p>
-        </div>
-        <div class="coverage-tags" aria-label="Danh sách khu vực">
-          <span>TP.HCM</span>
-          <span>Bình Dương</span>
-          <span>Đồng Nai</span>
-          <span>Long An</span>
-          <span>Vũng Tàu</span>
-          <span>Miền Tây</span>
+      <section class="section coverage-container" aria-labelledby="coverage-title">
+        <div class="coverage-grid">
+          <div>
+            <span class="kicker">Khu vực phục vụ</span>
+            <h2 id="coverage-title">Kết nối rộng khắp, di chuyển linh hoạt</h2>
+            <p>
+              Hệ thống tài xế phân bố rộng khắp các khu vực trọng điểm phía Nam, sẵn sàng đón khách nhanh chóng theo yêu cầu.
+            </p>
+          </div>
+          <div class="coverage-tags" aria-label="Danh sách khu vực">
+            <span class="coverage-tag">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path></svg>
+              TP.Hồ Chí Minh
+            </span>
+            <span class="coverage-tag">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path></svg>
+              Bình Dương
+            </span>
+            <span class="coverage-tag">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path></svg>
+              Đồng Nai
+            </span>
+            <span class="coverage-tag">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path></svg>
+              Long An
+            </span>
+            <span class="coverage-tag">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path></svg>
+              Vũng Tàu
+            </span>
+            <span class="coverage-tag">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path></svg>
+              Tỉnh Miền Tây
+            </span>
+          </div>
         </div>
       </section>
 
-      <section class="driver-cta" id="driver-register" aria-labelledby="driver-register-title">
-        <div>
-          <span>Dành cho tài xế</span>
-          <h2 id="driver-register-title">Muốn đăng ký quảng cáo hoặc nhận cuốc?</h2>
-          <p>
-            Gửi hồ sơ tài xế, khu vực hoạt động và loại xe. Admin sẽ duyệt trước khi hiển thị.
-          </p>
+      <section class="driver-cta-container">
+        <div class="driver-cta" id="driver-register" aria-labelledby="driver-register-title">
+          <div class="driver-cta-content">
+            <span class="kicker">Cơ hội gia tăng thu nhập</span>
+            <h2 id="driver-register-title">Bạn là tài xế lái xe độc lập?</h2>
+            <p>
+              Gia nhập cộng đồng Cuốc24h để kết nối với tệp khách hàng có sẵn, tăng tần suất chạy cuốc và xây dựng thương hiệu uy tín riêng của bạn.
+            </p>
+          </div>
+          <a class="button button-primary" href="#">Đăng ký đối tác tài xế</a>
         </div>
-        <a class="button button-dark" href="#">Đăng ký tài xế</a>
       </section>
     </main>
 
-    <footer class="footer">
-      <div>
-        <strong>Cuoc24h</strong>
-        <p>Kết nối khách hàng với tài xế dịch vụ độc lập.</p>
-      </div>
-      <a href="#top">Lên đầu trang</a>
-    </footer>
+    <div class="footer-container">
+      <footer class="footer">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a class="brand" href="#top">
+              <img class="brand-logo brand-logo-footer" src="logo.png" alt="Logo Cuốc24h" width="48" height="48" />
+              <span class="brand-text">
+                <strong>Cuốc24h</strong>
+                <small>Taxi dịch vụ</small>
+              </span>
+            </a>
+            <p>Nền tảng kết nối trực tiếp khách hàng di chuyển với cộng đồng tài xế lái xe dịch vụ độc lập uy tín.</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-link-col">
+              <h4>Liên kết nhanh</h4>
+              <a href="#services">Dịch vụ</a>
+              <a href="#drivers">Tài xế tiêu biểu</a>
+              <a href="#reviews">Ý kiến khách hàng</a>
+            </div>
+            <div class="footer-link-col">
+              <h4>Dành cho tài xế</h4>
+              <a href="#driver-register">Đăng ký làm đối tác</a>
+              <a href="#">Quy tắc phục vụ</a>
+              <a href="#">Hỗ trợ tài xế</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 Cuốc24h. Tất cả quyền được bảo lưu.</p>
+          <a class="footer-top-link" href="#top">
+            <span>Cuộn lên đầu trang</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+          </a>
+        </div>
+      </footer>
+    </div>
 
     <script src="app.js"></script>
   </body>
