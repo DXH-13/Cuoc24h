@@ -1,0 +1,79 @@
+<section class="flex min-h-screen items-center justify-center bg-stone-900 px-5 py-12">
+  <div class="w-full max-w-md">
+    <a routerLink="/" class="mb-8 flex items-center justify-center gap-3">
+      <img src="logo.png" alt="Logo Cuốc24h" width="44" height="44" class="rounded-xl" />
+      <span class="font-display text-2xl font-semibold text-white">Cuốc24h</span>
+    </a>
+
+    @if (session(); as s) {
+      <div class="rounded-3xl bg-white p-8 text-center shadow-xl">
+        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-green-100 text-green-600">
+          <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <h1 class="font-display mt-5 text-2xl font-semibold text-ink">Xin chào, {{ s.username }}</h1>
+        <p class="mt-2 text-stone-600">
+          Bạn đã đăng nhập vào khu vực quản trị. Trang tổng quan (dashboard) đang được xây dựng.
+        </p>
+        <button type="button" class="button button-ghost mt-6" (click)="logout()">Đăng xuất</button>
+      </div>
+    } @else {
+      <div class="rounded-3xl bg-white p-8 shadow-xl">
+        <div class="text-center">
+          <h1 class="font-display text-2xl font-semibold text-ink">Đăng nhập quản trị</h1>
+          <p class="mt-1 text-sm text-stone-500">Khu vực dành riêng cho quản trị viên Cuốc24h.</p>
+        </div>
+
+        <form [formGroup]="form" (ngSubmit)="submit()" novalidate class="mt-7 grid gap-5">
+          @if (status() === 'error' && errorMessage()) {
+            <div class="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700" role="alert">
+              {{ errorMessage() }}
+            </div>
+          }
+
+          <div class="grid gap-2">
+            <label for="username" class="text-sm font-semibold text-stone-700">Tài khoản</label>
+            <input id="username" type="text" formControlName="username" autocomplete="username" placeholder="admin"
+              class="w-full rounded-xl border bg-white px-4 py-3 text-ink outline-none transition placeholder:text-stone-400 focus:border-primary focus:ring-2 focus:ring-primary/25"
+              [class.border-stone-200]="!invalid('username')" [class.border-red-400]="invalid('username')" />
+            @if (invalid('username')) { <p class="text-sm text-red-600">Vui lòng nhập tài khoản.</p> }
+          </div>
+
+          <div class="grid gap-2">
+            <label for="password" class="text-sm font-semibold text-stone-700">Mật khẩu</label>
+            <div class="relative">
+              <input id="password" [type]="showPassword() ? 'text' : 'password'" formControlName="password" autocomplete="current-password" placeholder="••••••••"
+                class="w-full rounded-xl border bg-white px-4 py-3 pr-12 text-ink outline-none transition placeholder:text-stone-400 focus:border-primary focus:ring-2 focus:ring-primary/25"
+                [class.border-stone-200]="!invalid('password')" [class.border-red-400]="invalid('password')" />
+              <button type="button" (click)="togglePassword()" [attr.aria-label]="showPassword() ? 'Ẩn mật khẩu' : 'Hiện mật khẩu'"
+                class="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 transition hover:text-stone-700">
+                @if (showPassword()) {
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
+                } @else {
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                }
+              </button>
+            </div>
+            @if (invalid('password')) { <p class="text-sm text-red-600">Vui lòng nhập mật khẩu.</p> }
+          </div>
+
+          <button type="submit" class="button button-primary w-full" [disabled]="status() === 'submitting'">
+            @if (status() === 'submitting') {
+              <span class="inline-block h-5 w-5 animate-spin rounded-full border-2 border-stone-900/30 border-t-stone-900"></span>
+              <span>Đang đăng nhập…</span>
+            } @else {
+              <span>Đăng nhập</span>
+            }
+          </button>
+        </form>
+
+        <p class="mt-5 rounded-xl bg-stone-50 px-4 py-3 text-center text-xs text-stone-500">
+          Tài khoản demo: <strong class="text-stone-700">admin</strong> / <strong class="text-stone-700">cuoc24h</strong>
+        </p>
+      </div>
+    }
+
+    <p class="mt-6 text-center text-sm text-stone-400">
+      <a routerLink="/" class="transition hover:text-white">← Về trang chủ</a>
+    </p>
+  </div>
+</section>

@@ -52,7 +52,27 @@ FE/
 - Public pages gom landing page, booking flow, driver registration.
 - Admin pages gom login, dashboard, bookings, drivers, notification logs.
 
-## Prototype
+## Chay Ung Dung
 
-- Landing page static: `landing/index.html`
-- Mo truc tiep file HTML trong trinh duyet de xem prototype khi chua scaffold Angular.
+Angular app da duoc scaffold (Angular 22 standalone + Tailwind v4).
+
+```bash
+cd FE
+npm install
+npm start        # ng serve -> http://localhost:4200
+npm run build    # build production vao dist/
+```
+
+Cac route hien co:
+
+- `/` — landing page (feature `public/home`)
+- `/dat-xe` — form dat xe khach hang (FR-02)
+- `/dang-ky-tai-xe` — dang ky tai xe, trang thai PENDING (FR-03)
+- `/admin/dang-nhap` — admin dang nhap (FR-04, demo: `admin` / `cuoc24h`)
+
+API hien tai duoc mock trong `core/services` + `core/auth`; thay bang HttpClient khi BE san sang.
+
+## Prototype (cu)
+
+- `landing/index.html` la ban prototype tinh ban dau. Thiet ke da duoc port vao Angular
+  (`src/styles/landing.css` + feature `public/home`). Giu lai de tham chieu.

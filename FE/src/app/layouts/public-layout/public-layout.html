@@ -1,0 +1,97 @@
+<header class="topbar">
+  <a class="brand" routerLink="/" aria-label="Cuốc24h">
+    <img class="brand-logo" src="logo.png" alt="Logo Cuốc24h" width="48" height="48" />
+    <span class="brand-text">
+      <strong>Cuốc24h</strong>
+      <small>Taxi dịch vụ</small>
+    </span>
+  </a>
+
+  <nav class="main-nav" aria-label="Điều hướng chính">
+    <a routerLink="/" fragment="services">Dịch vụ</a>
+    <a routerLink="/" fragment="drivers">Tài xế nổi bật</a>
+    <a routerLink="/" fragment="reviews">Đánh giá</a>
+    <a routerLink="/dat-xe" routerLinkActive="is-active">Đặt xe</a>
+    <a routerLink="/dang-ky-tai-xe" routerLinkActive="is-active">Đăng ký tài xế</a>
+  </nav>
+
+  <a class="nav-phone" href="tel:0900000000">
+    <span>Hotline 24/7</span>
+    <strong>0900 000 000</strong>
+  </a>
+
+  <button
+    class="nav-toggle"
+    type="button"
+    [class.is-open]="menuOpen()"
+    (click)="toggleMenu()"
+    [attr.aria-label]="menuOpen() ? 'Đóng menu điều hướng' : 'Mở menu điều hướng'"
+    [attr.aria-expanded]="menuOpen()"
+    aria-controls="mobile-menu"
+  >
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+  </button>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" [class.is-open]="menuOpen()">
+  <nav class="mobile-menu-nav" aria-label="Điều hướng di động">
+    <a routerLink="/" fragment="services" (click)="closeMenu()">Dịch vụ</a>
+    <a routerLink="/" fragment="drivers" (click)="closeMenu()">Tài xế nổi bật</a>
+    <a routerLink="/" fragment="reviews" (click)="closeMenu()">Đánh giá</a>
+    <a routerLink="/dang-ky-tai-xe" (click)="closeMenu()">Đăng ký tài xế</a>
+  </nav>
+  <a class="button button-primary" routerLink="/dat-xe" (click)="closeMenu()">Đặt chuyến ngay</a>
+  <a class="mobile-menu-phone" href="tel:0900000000">
+    <span class="mobile-menu-phone-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+    </span>
+    <span class="mobile-menu-phone-text">
+      <small>Hotline 24/7</small>
+      <strong>0900 000 000</strong>
+    </span>
+  </a>
+</div>
+<div class="mobile-menu-overlay" [class.is-open]="menuOpen()" (click)="closeMenu()"></div>
+
+<router-outlet />
+
+<div class="footer-container">
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" routerLink="/">
+          <img class="brand-logo brand-logo-footer" src="logo.png" alt="Logo Cuốc24h" width="48" height="48" />
+          <span class="brand-text">
+            <strong>Cuốc24h</strong>
+            <small>Taxi dịch vụ</small>
+          </span>
+        </a>
+        <p>Nền tảng kết nối trực tiếp khách hàng di chuyển với cộng đồng tài xế lái xe dịch vụ độc lập uy tín.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-link-col">
+          <h4>Liên kết nhanh</h4>
+          <a routerLink="/" fragment="services">Dịch vụ</a>
+          <a routerLink="/" fragment="drivers">Tài xế tiêu biểu</a>
+          <a routerLink="/" fragment="reviews">Ý kiến khách hàng</a>
+          <a routerLink="/dat-xe">Đặt xe</a>
+        </div>
+        <div class="footer-link-col">
+          <h4>Dành cho tài xế &amp; quản trị</h4>
+          <a routerLink="/dang-ky-tai-xe">Đăng ký làm đối tác</a>
+          <a routerLink="/admin/dang-nhap">Đăng nhập quản trị</a>
+          <a href="tel:0900000000">Hỗ trợ: 0900 000 000</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© {{ year }} Cuốc24h. Tất cả quyền được bảo lưu.</p>
+      <a class="footer-top-link" routerLink="/">
+        <span>Về trang chủ</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+      </a>
+    </div>
+  </footer>
+</div>

@@ -1,0 +1,126 @@
+<section class="bg-paper min-h-screen px-5 pb-12 pt-28 sm:px-8 lg:pb-16 lg:pt-32">
+  <div class="mx-auto max-w-5xl">
+    <div class="mx-auto mb-10 max-w-2xl text-center">
+      <span class="inline-flex items-center gap-2 rounded-full bg-primary-light px-4 py-1.5 text-sm font-semibold text-primary-dark">
+        Đặt xe nhanh
+      </span>
+      <h1 class="font-display mt-4 text-4xl font-semibold text-ink sm:text-5xl">Đặt chuyến đi của bạn</h1>
+      <p class="mt-3 text-stone-600">
+        Không cần tài khoản — chỉ cần điền lộ trình và số điện thoại, tài xế khu vực gần nhất sẽ liên hệ xác nhận.
+      </p>
+    </div>
+
+    @if (status() === 'success') {
+      <div class="mx-auto max-w-xl rounded-3xl border border-stone-200 bg-white p-8 text-center shadow-lg sm:p-10">
+        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-green-100 text-green-600">
+          <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <h2 class="font-display mt-5 text-2xl font-semibold text-ink">Đã tiếp nhận yêu cầu!</h2>
+        <p class="mt-2 text-stone-600">
+          Cảm ơn bạn đã tin tưởng Cuốc24h. Tài xế khu vực gần nhất sẽ liên hệ với bạn trong ít phút để xác nhận và báo giá.
+        </p>
+        <div class="mt-6 rounded-2xl bg-stone-50 px-5 py-4">
+          <span class="text-sm text-stone-500">Mã chuyến đi của bạn</span>
+          <p class="font-display mt-1 text-2xl font-bold tracking-wide text-primary-dark">{{ resultCode() }}</p>
+        </div>
+        <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:justify-center">
+          <button type="button" class="button button-primary" (click)="reset()">Đặt chuyến khác</button>
+          <a href="tel:0900000000" class="button button-ghost">Gọi hotline 0900 000 000</a>
+        </div>
+      </div>
+    } @else {
+      <form
+        [formGroup]="form"
+        (ngSubmit)="submit()"
+        novalidate
+        class="grid gap-6 rounded-3xl border border-stone-200 bg-white p-6 shadow-lg sm:p-8 lg:grid-cols-[1.4fr_1fr]"
+      >
+        <div class="grid gap-5">
+          @if (status() === 'error' && errorMessage()) {
+            <div class="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700" role="alert">
+              {{ errorMessage() }}
+            </div>
+          }
+
+          <div class="grid gap-2">
+            <label for="customerName" class="text-sm font-semibold text-stone-700">Họ và tên <span class="text-red-500">*</span></label>
+            <input id="customerName" type="text" formControlName="customerName" placeholder="Nguyễn Văn A"
+              class="w-full rounded-xl border bg-white px-4 py-3 text-ink outline-none transition placeholder:text-stone-400 focus:border-primary focus:ring-2 focus:ring-primary/25"
+              [class.border-stone-200]="!invalid('customerName')" [class.border-red-400]="invalid('customerName')" />
+            @if (invalid('customerName')) {
+              <p class="text-sm text-red-600">Vui lòng nhập họ tên (tối thiểu 2 ký tự).</p>
+            }
+          </div>
+
+          <div class="grid gap-2">
+            <label for="phone" class="text-sm font-semibold text-stone-700">Số điện thoại <span class="text-red-500">*</span></label>
+            <input id="phone" type="tel" formControlName="phone" placeholder="0900 000 000"
+              class="w-full rounded-xl border bg-white px-4 py-3 text-ink outline-none transition placeholder:text-stone-400 focus:border-primary focus:ring-2 focus:ring-primary/25"
+              [class.border-stone-200]="!invalid('phone')" [class.border-red-400]="invalid('phone')" />
+            @if (invalid('phone')) {
+              <p class="text-sm text-red-600">Số điện thoại không hợp lệ (bắt đầu bằng 0, 9–11 chữ số).</p>
+            }
+          </div>
+
+          <div class="grid gap-2">
+            <label for="pickup" class="text-sm font-semibold text-stone-700">Điểm đón <span class="text-red-500">*</span></label>
+            <input id="pickup" type="text" formControlName="pickup" placeholder="Ví dụ: Quận 1, TP.HCM"
+              class="w-full rounded-xl border bg-white px-4 py-3 text-ink outline-none transition placeholder:text-stone-400 focus:border-primary focus:ring-2 focus:ring-primary/25"
+              [class.border-stone-200]="!invalid('pickup')" [class.border-red-400]="invalid('pickup')" />
+            @if (invalid('pickup')) {
+              <p class="text-sm text-red-600">Vui lòng nhập điểm đón.</p>
+            }
+          </div>
+
+          <div class="grid gap-2">
+            <label for="dropoff" class="text-sm font-semibold text-stone-700">Điểm đến <span class="text-red-500">*</span></label>
+            <input id="dropoff" type="text" formControlName="dropoff" placeholder="Ví dụ: Sân bay Tân Sơn Nhất"
+              class="w-full rounded-xl border bg-white px-4 py-3 text-ink outline-none transition placeholder:text-stone-400 focus:border-primary focus:ring-2 focus:ring-primary/25"
+              [class.border-stone-200]="!invalid('dropoff')" [class.border-red-400]="invalid('dropoff')" />
+            @if (invalid('dropoff')) {
+              <p class="text-sm text-red-600">Vui lòng nhập điểm đến.</p>
+            }
+          </div>
+        </div>
+
+        <div class="grid content-start gap-5 rounded-2xl bg-stone-50 p-5 sm:p-6">
+          <div class="grid gap-2">
+            <label for="pickupTime" class="text-sm font-semibold text-stone-700">Thời gian đón <span class="text-red-500">*</span></label>
+            <input id="pickupTime" type="datetime-local" formControlName="pickupTime"
+              class="w-full rounded-xl border bg-white px-4 py-3 text-ink outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/25"
+              [class.border-stone-200]="!invalid('pickupTime')" [class.border-red-400]="invalid('pickupTime')" />
+            @if (invalid('pickupTime')) {
+              <p class="text-sm text-red-600">Vui lòng chọn thời gian đón.</p>
+            }
+          </div>
+
+          <div class="grid gap-2">
+            <label for="vehicleType" class="text-sm font-semibold text-stone-700">Loại xe mong muốn</label>
+            <select id="vehicleType" formControlName="vehicleType"
+              class="w-full rounded-xl border border-stone-200 bg-white px-4 py-3 text-ink outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/25">
+              @for (opt of vehicleOptions; track opt.value) {
+                <option [value]="opt.value">{{ opt.label }}</option>
+              }
+            </select>
+          </div>
+
+          <div class="grid gap-2">
+            <label for="note" class="text-sm font-semibold text-stone-700">Ghi chú thêm</label>
+            <textarea id="note" formControlName="note" rows="3" placeholder="Số hành lý, ghế em bé, đón tại tầng hầm…"
+              class="w-full resize-none rounded-xl border border-stone-200 bg-white px-4 py-3 text-ink outline-none transition placeholder:text-stone-400 focus:border-primary focus:ring-2 focus:ring-primary/25"></textarea>
+          </div>
+
+          <button type="submit" class="button button-primary w-full" [disabled]="status() === 'submitting'">
+            @if (status() === 'submitting') {
+              <span class="inline-block h-5 w-5 animate-spin rounded-full border-2 border-stone-900/30 border-t-stone-900"></span>
+              <span>Đang gửi…</span>
+            } @else {
+              <span>Gửi yêu cầu đặt xe</span>
+            }
+          </button>
+          <p class="text-center text-xs text-stone-500">Bằng việc gửi, bạn đồng ý để tài xế liên hệ qua số điện thoại trên.</p>
+        </div>
+      </form>
+    }
+  </div>
+</section>
