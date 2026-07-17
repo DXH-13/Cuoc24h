@@ -1,0 +1,55 @@
+spring:
+  application:
+    name: cuoc24h-api
+  profiles:
+    # Default to the H2-backed dev profile so the app starts with zero setup.
+    # Override with SPRING_PROFILES_ACTIVE=mysql (or prod) for a real database.
+    default: dev
+
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/cuoc24h?useSSL=false&serverTimezone=Asia/Ho_Chi_Minh&allowPublicKeyRetrieval=true}
+    username: ${SPRING_DATASOURCE_USERNAME:cuoc24h}
+    password: ${SPRING_DATASOURCE_PASSWORD:cuoc24h}
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      # Flyway owns the schema on real databases.
+      ddl-auto: none
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: Asia/Ho_Chi_Minh
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+server:
+  port: ${SERVER_PORT:8080}
+
+# Application-specific settings
+app:
+  cors:
+    # Angular dev server. Comma-separated list for multiple origins.
+    allowed-origins: ${APP_CORS_ALLOWED_ORIGINS:http://localhost:4200}
+  jwt:
+    # MUST be overridden in production via APP_JWT_SECRET (Base64 or plain, >= 32 bytes).
+    secret: ${APP_JWT_SECRET:change-me-please-change-me-please-change-me-please}
+    # Access token lifetime in minutes.
+    expiration-minutes: ${APP_JWT_EXPIRATION_MINUTES:720}
+  admin:
+    # Seeded on first run if no admin exists. Change the password after first login.
+    default-username: ${APP_ADMIN_USERNAME:admin}
+    default-password: ${APP_ADMIN_PASSWORD:cuoc24h}
+    default-display-name: ${APP_ADMIN_DISPLAY_NAME:Quan tri vien}
+  zalo:
+    # When false, notifications are logged as SENT without any outbound call (MVP no-op).
+    enabled: ${ZALO_NOTIFICATION_ENABLED:false}
+    webhook-url: ${ZALO_WEBHOOK_URL:}
+    webhook-secret: ${ZALO_WEBHOOK_SECRET:}
+    recipient: ${ZALO_RECIPIENT:Nhom dieu phoi Cuoc24h}
+
+logging:
+  level:
+    com.cuoc24h.api: INFO

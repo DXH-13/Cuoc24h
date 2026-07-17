@@ -1,0 +1,28 @@
+# Dev profile: in-memory H2 in MySQL-compatibility mode, no external database needed.
+# Flyway is disabled here; Hibernate builds the schema from the entities so `./mvnw
+# spring-boot:run` works out of the box. The MySQL profile uses Flyway migrations.
+spring:
+  datasource:
+    url: jdbc:h2:mem:cuoc24h;MODE=MySQL;DB_CLOSE_DELAY=-1;DATABASE_TO_LOWER=TRUE
+    username: sa
+    password: ""
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+
+  flyway:
+    enabled: false
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+logging:
+  level:
+    com.cuoc24h.api: DEBUG

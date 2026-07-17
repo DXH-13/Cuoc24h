@@ -1,0 +1,9 @@
+# MySQL profile: activate with SPRING_PROFILES_ACTIVE=mysql (or -Dspring-boot.run.profiles=mysql).
+# Inherits the MySQL datasource + Flyway settings from application.yml; this file only
+# exists so activating the profile disables the `dev` H2 defaults.
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+  flyway:
+    enabled: true
